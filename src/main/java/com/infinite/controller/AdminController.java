@@ -21,7 +21,7 @@ public class AdminController {
 	@Autowired
 	IAdminSevice adminserv;
 	
-	@RequestMapping(value = "/admin/login")
+	@RequestMapping(value = "/admin/login",method=RequestMethod.POST)
 	public ResponseEntity<String> loginUser(@RequestBody Admin admin) {
 		String username = admin.getAdmin_name();
 		String password = admin.getPassword();

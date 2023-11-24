@@ -33,7 +33,7 @@ public class UserController {
 		}
 	}
 
-	@RequestMapping(value = "/user/login")
+	@RequestMapping(value = "/user/login",method=RequestMethod.POST)
 	public ResponseEntity<String> loginUser(@RequestBody User user) {
 		String username = user.getUser_name();
 		String password = user.getPassword();
