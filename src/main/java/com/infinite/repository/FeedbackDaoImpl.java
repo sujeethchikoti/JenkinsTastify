@@ -22,7 +22,7 @@ public class FeedbackDaoImpl implements IFeedbackDao{
 	@Transactional
 	public List<Feedback> getFeedback() {
 		Session session = this.sesfactory.getCurrentSession();
-		Query q = session.createQuery("FROM MenuItem");
+		Query q = session.createQuery("FROM Feedback");
 		List<Feedback> ls = q.list();
 		return ls;
 	}

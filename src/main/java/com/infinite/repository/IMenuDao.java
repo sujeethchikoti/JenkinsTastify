@@ -13,6 +13,9 @@ public interface IMenuDao {
 	public List<MenuItem> getAllmenu();
 
 	public MenuItem addmenuItem(MenuItem mitem);
+	
 
-	public MenuItem deletemenuItem(MenuItem mitem,int id);
+	public void deletemenuItem(int id);
+
+	public void addmenuItem(String name, Integer res_id, Integer rate);
 }

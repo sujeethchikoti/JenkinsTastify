@@ -34,6 +34,18 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return udaoimpl.getUser(username, password);
 	}
+
+	@Override
+	public Integer getuserId(String username, String password) {
+		// TODO Auto-generated method stub
+		return udaoimpl.getuserId(username, password);
+	}
+
+	@Override
+	public List<User> user(int userId) {
+		// TODO Auto-generated method stub
+		return udaoimpl.user(userId);
+	}
 	
 	
 }

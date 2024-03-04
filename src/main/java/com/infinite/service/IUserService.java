@@ -11,4 +11,8 @@ public interface IUserService {
 	public User validateUser(String username, String password);
 	
 	public List<User> getUser(String username, String password);
+	
+	public Integer getuserId(String username, String password);
+	
+	public List<User> user(int userId);
 }

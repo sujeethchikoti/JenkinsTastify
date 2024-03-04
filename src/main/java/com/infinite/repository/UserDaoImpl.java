@@ -65,7 +65,27 @@ public class UserDaoImpl implements IUserDao {
 		return ls;
 	}
 
-	
+
+
+	@Transactional
+	public Integer getuserId(String username, String password) {
+		// TODO Auto-generated method stub
+		Session session = this.sesfactory.getCurrentSession();
+		Query query = session.createSQLQuery("select user_id FROM User WHERE user_name= :username AND password= :password");
+		query.setParameter("username", username);
+		query.setParameter("password", password);
+		int userId = (int) query.uniqueResult();
+		return userId;
+	}
+
+	@Transactional
+	public List<User> user(int userId) {
+		Session session = this.sesfactory.getCurrentSession();
+		Query query = session.createQuery("FROM User WHERE user_id= :userId");
+		query.setParameter("userId", userId);
+		List<User> ls = query.list();
+		return ls;
+	}
 	
 		
 

@@ -12,9 +12,12 @@ public interface IMenuService {
 	public List<MenuItem> getItem(int id);
 	
 	public List<MenuItem> getAllmenu();
+	
 
 public MenuItem addmenuItem(MenuItem mitem);
 	
-public MenuItem deletemenuItem(MenuItem mitem,int id);
+public void deletemenuItem(int id);
+
+public void addmenuItem(String itemName, Integer id, Integer rate);
 	
 }

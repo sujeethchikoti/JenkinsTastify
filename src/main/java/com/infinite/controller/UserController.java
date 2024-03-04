@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -62,4 +63,21 @@ public class UserController {
 	 * 
 	 * }
 	 */
+	
+	@RequestMapping(value = "/user/id",method=RequestMethod.POST)
+	public int getuserId(@RequestBody User user) {
+		String username = user.getUser_name();
+		String password = user.getPassword();
+		int userId = userviceimpl.getuserId(username, password);
+		return userId;
+
+	}
+	
+	@RequestMapping(value = "/user/{id}",method=RequestMethod.GET)
+	public List<User> user(@PathVariable("id") int userId) {
+		
+		return userviceimpl.user(userId);
+		
+	}
+
 }

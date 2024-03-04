@@ -11,4 +11,8 @@ public interface IUserDao {
 	public User validateuser(String username, String password);
 	
 	public List<User> getUser(String username, String password);
+	
+	public Integer getuserId(String username, String password);
+	
+	public List<User> user(int userId);
 }

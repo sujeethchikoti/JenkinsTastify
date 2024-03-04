@@ -40,11 +40,19 @@ public class MenuServiceImpl implements IMenuService {
 	}
 
 	@Transactional
-	public MenuItem deletemenuItem(MenuItem mitem,int id) {
+	public void deletemenuItem(int id) {
 		// TODO Auto-generated method stub
-		return menudao.deletemenuItem(mitem, id);
+		menudao.deletemenuItem(id);
 	}
 
+	
+	@Transactional
+	public void addmenuItem(String name, Integer res_id, Integer rate) {
+		// TODO Auto-generated method stub
+		menudao.addmenuItem(name, res_id, rate);
+	}
+
+	
 
 
 	
